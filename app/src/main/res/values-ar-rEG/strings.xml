@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">جدول الادوية</string>
+    <string name="medicine_name">اسم الدواء</string>
+    <string name="dosage">الجرعه</string>
+    <string name="time">الوقت</string>
+    <string name="select_time">اختار الوقت</string>
+    <string name="notes">ملاحظات</string>
+    <string name="save_medicine">حفظ الدواء</string>
+    <string name="add_dose">إضافه جرعة</string>
+    <string name="delete">حذف</string>
+    <string name="edit">تعديل</string>
+    <string name="how_many_days">كم عدد الايام</string>
+    <string name="start_date">تاريخ البدايه</string>
+    <string name="end_date">تاريخ النهايه</string>
+    <string name="select_days">اختر يوم</string>
+    <string name="sat">سبت</string>
+    <string name="fri">جمعه</string>
+    <string name="thu">خميس</string>
+    <string name="wed">اربعاء</string>
+    <string name="tue">ثلاثاء</string>
+    <string name="mon">اثنين</string>
+    <string name="sun">احد</string>
+    <string name="choose_time">اختر وقت</string>
+    <string name="no_history">لا يوجد اي سجلات</string>
+    <string name="dosage_history">"سجل الجرعات "</string>
+</resources>

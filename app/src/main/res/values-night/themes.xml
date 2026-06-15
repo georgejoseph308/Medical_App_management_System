@@ -1,0 +1,16 @@
+<resources>
+    <style name="Base.Theme.DrugReminder" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_100</item>
+        <item name="colorPrimaryVariant">@color/purple_600</item>
+        <item name="colorOnPrimary">@color/purple_700</item>
+        <item name="colorSecondary">@color/purple_600</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/on_surface_dark</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant_dark</item>
+        <item name="android:statusBarColor">@color/background_dark</item>
+    </style>
+
+    <style name="Theme.DrugReminder" parent="Base.Theme.DrugReminder"/>
+</resources>

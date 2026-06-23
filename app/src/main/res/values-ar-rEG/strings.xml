@@ -24,4 +24,26 @@
     <string name="choose_time">اختر وقت</string>
     <string name="no_history">لا يوجد اي سجلات</string>
     <string name="dosage_history">"سجل الجرعات "</string>
+    <string name="doctor_name">اسم الطبيب</string>
+    <string name="specialty">التخصص</string>
+    <string name="location">المكان</string>
+    <string name="date">التاريخ</string>
+    <string name="save_appointment">حفظ الميعاد</string>
+    <string name="update_appointment">تحديث الميعاد</string>
+    <string name="fill_required_fields">برجاء ملء الخانات المطلوبه</string>
+    <string name="select_date">برجاء اختيار التاريخ</string>
+    <string name="select_appointment_time">برجاء اختيار الساعه</string>
+    <string name="appointment_saved">تم حفظ الميعاد</string>
+    <string name="fab_add_lab_result">إضافه تحاليل</string>
+    <string name="save">Save</string>
+    <string name="notes_optional">Notes (optional)</string>
+    <string name="datee">Date</string>
+    <string name="unit">Unit</string>
+    <string name="value">Value</string>
+    <string name="analysis_name">اسم التحليل</string>
+    <string name="nav_medicines">الادوية</string>
+    <string name="nav_lab_results">نتيجة التحاليل</string>
+    <string name="nav_appointments">مواعيد الاستشارة</string>
+    <string name="fab_add_medicine">إضافة دواء</string>
+    <string name="fab_add_appointment">إضافة استشارة</string>
 </resources>

@@ -20,7 +20,7 @@ import com.example.drugreminder.data.model.MedicalAppointment
         LabResult::class,
         MedicalAppointment::class
                ],
-    version = 5,
+    version = 6,
     exportSchema = false
 )
 abstract class MedicineDataBase : RoomDatabase() {

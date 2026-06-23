@@ -17,11 +17,21 @@ class AlarmReceiver : BroadcastReceiver() {
 
     @SuppressLint("ScheduleExactAlarm")
     override fun onReceive(context: Context, intent: Intent) {
+        val type = intent.getStringExtra("type") ?: "medicine"
+
+        if (type == "appointment") {
+            handleAppointmentAlarm(context, intent)
+        } else {
+            handleMedicineAlarm(context, intent)
+        }
+    }
+
+    private fun handleMedicineAlarm(context: Context, intent: Intent) {
         val medicineId = intent.getIntExtra("medicine_id", 0)
         val medicineName = intent.getStringExtra("medicine_name") ?: "Medicine"
         val dosage = intent.getStringExtra("medicine_dosage") ?: ""
         val isBefore = intent.getBooleanExtra("is_before", false)
-        val day=intent.getStringExtra("day")
+        val day = intent.getStringExtra("day")
         val requestCode = intent.getIntExtra("request_code", 0)
 
         if (isBefore) {
@@ -32,13 +42,13 @@ class AlarmReceiver : BroadcastReceiver() {
                 message = "استعد لجرعة $medicineName - $dosage"
             )
         } else {
-            val scope= CoroutineScope(Dispatchers.IO)
+            val scope = CoroutineScope(Dispatchers.IO)
             scope.launch {
                 val db = MedicineDataBase.getDatabase(context)
                 val medicine = db.medicineDao().getMedicineById(medicineId)
                 val takenDays = medicine?.takenDays?.split(",") ?: emptyList()
                 val alreadyTaken = takenDays.contains(day)
-                if (!alreadyTaken){
+                if (!alreadyTaken) {
                     NotificationHelper.showNotification(
                         context = context,
                         medicineId = medicineId,
@@ -48,12 +58,35 @@ class AlarmReceiver : BroadcastReceiver() {
                 }
             }
         }
-        scheduleNextWeek(context,intent,requestCode)
-        // جدد الـ alarm للأسبوع الجاي
+        scheduleNextWeek(context, intent, requestCode)
+    }
+
+    private fun handleAppointmentAlarm(context: Context, intent: Intent) {
+        val appointmentId = intent.getIntExtra("appointment_id", 0)
+        val doctorName = intent.getStringExtra("doctor_name") ?: "Doctor"
+        val specialty = intent.getStringExtra("specialty") ?: ""
+        val location = intent.getStringExtra("location") ?: ""
+        val isBefore = intent.getBooleanExtra("is_before", false)
+        val requestCode = intent.getIntExtra("request_code", 0)
+
+        val title = if (isBefore) "⏰ موعد بعد 30 دقيقة!" else "🏥 وقت الموعد!"
+        val message = if (isBefore) {
+            "متبقى 30 دقيقة لموعدك مع د. $doctorName ($specialty)"
+        } else {
+            "موعدك الآن مع د. $doctorName في $location"
         }
-        private fun scheduleNextWeek(context: Context,intent: Intent,requestCode:Int){
-            val nextWeekIntent= Intent(context, AlarmReceiver::class.java).apply{
-                putExtras(intent)
+
+        NotificationHelper.showNotification(
+            context = context,
+            medicineId = appointmentId + 10000,
+            title = title,
+            message = message
+        )
+    }
+
+    private fun scheduleNextWeek(context: Context, intent: Intent, requestCode: Int) {
+        val nextWeekIntent = Intent(context, AlarmReceiver::class.java).apply {
+            putExtras(intent)
         }
         val pendingIntent = PendingIntent.getBroadcast(
             context,

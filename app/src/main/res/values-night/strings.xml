@@ -23,4 +23,10 @@
     <string name="choose_time">Choose Time</string>
     <string name="no_history">No history</string>
     <string name="dosage_history">Dosage History</string>
+    <string name="save">Save</string>
+    <string name="notes_optional">Notes (optional)</string>
+    <string name="datee">Date</string>
+    <string name="unit">Unit</string>
+    <string name="value">Value</string>
+    <string name="analysis_name">Analysis Name</string>
 </resources>

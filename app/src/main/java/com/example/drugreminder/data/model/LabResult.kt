@@ -12,6 +12,7 @@ data class LabResult(
     val unit: String,
     val date:Long,
     val notes:String="",
+    val pdfUri:String="",
     val createdAt: Long= System.currentTimeMillis()
 
 )

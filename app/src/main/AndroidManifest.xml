@@ -35,6 +35,15 @@
             android:exported="false"/>
         <activity android:name="com.example.drugreminder.activities.HistoryActivity"
             android:exported="false"/>
+        <activity
+            android:name="com.example.drugreminder.activities.AddAppointmentActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.drugreminder.activities.AddLabResultActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.drugreminder.activities.MedicalActivity"
+            android:exported="false"/>
         <receiver
             android:name="com.example.drugreminder.utils.AlarmReceiver"
             android:exported="false"/>

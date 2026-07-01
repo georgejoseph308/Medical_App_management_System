@@ -5,6 +5,7 @@
     <string name="time">Time</string>
     <string name="select_time">Select Time</string>
     <string name="notes">Notes</string>
+    <string name="notes_optional">Notes (optional)</string>
     <string name="save_medicine">Save Medicine</string>
     <string name="add_dose">Add Dose</string>
     <string name="delete">delete</string>
@@ -27,6 +28,9 @@
     <string name="specialty">Specialty</string>
     <string name="location">Location</string>
     <string name="date">Date</string>
+    <string name="unit">Unit</string>
+    <string name="value">Value</string>
+    <string name="analysis_name">Analysis Name</string>
     <string name="save_appointment">Save Appointment</string>
     <string name="update_appointment">Update Appointment</string>
     <string name="fill_required_fields">Please fill all required fields</string>
@@ -40,17 +44,10 @@
     <string name="fab_add_appointment">Add Appointment</string>
     <string name="fab_add_lab_result">Add Lab Result</string>
     <string name="save">Save</string>
-    <string name="notes_optional">Notes (optional)</string>
-    <string name="datee">Date</string>
-    <string name="unit">Unit</string>
-    <string name="value">Value</string>
-    <string name="analysis_name">Analysis Name</string>
-    <string name="add_appointment">Add Appointment</string>
     <string name="fab_add">Add</string>
     <string name="attach_pdf">Attach PDF File</string>
     <string name="pdf_attached">PDF attached: %s</string>
     <string name="choose_option">Choose an option</string>
-    <string name="add_medicine">Add Medicine</string>
-    <string name="add_lab_result">Add Lab Result</string>
-    <string name="add_appointment_option">Add Appointment</string>
+    <string name="Date">Date</string>
+    <string name="add_appointment">Add Appointment</string>
 </resources>

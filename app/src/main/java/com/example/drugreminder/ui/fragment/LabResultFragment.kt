@@ -7,16 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.drugreminder.databinding.FragmentLabResultBinding
 import com.example.drugreminder.activities.AddLabResultActivity
 import com.example.drugreminder.ui.adapter.LabResultAdapter
 import com.example.drugreminder.ui.viewmodel.MedicalViewModel
+import kotlin.getValue
 
 class LabResultFragment : Fragment() {
 
     private var _binding: FragmentLabResultBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: MedicalViewModel by activityViewModels()
+    private val viewModel: MedicalViewModel by viewModels()
     private lateinit var adapter: LabResultAdapter
 
     override fun onCreateView(
@@ -32,7 +34,6 @@ class LabResultFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         observeLabResults()
-        setupFab()
     }
 
     private fun setupRecyclerView() {
@@ -57,12 +58,6 @@ class LabResultFragment : Fragment() {
                 if (results.isEmpty()) View.VISIBLE else View.GONE
             binding.recyclerLabResults.visibility =
                 if (results.isEmpty()) View.GONE else View.VISIBLE
-        }
-    }
-
-    private fun setupFab() {
-        binding.fabAddLabResult.setOnClickListener {
-            startActivity(Intent(requireContext(), AddLabResultActivity::class.java))
         }
     }
 

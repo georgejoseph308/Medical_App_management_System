@@ -35,15 +35,20 @@
     <string name="select_appointment_time">برجاء اختيار الساعه</string>
     <string name="appointment_saved">تم حفظ الميعاد</string>
     <string name="fab_add_lab_result">إضافه تحاليل</string>
-    <string name="save">Save</string>
-    <string name="notes_optional">Notes (optional)</string>
-    <string name="datee">Date</string>
-    <string name="unit">Unit</string>
-    <string name="value">Value</string>
+    <string name="save">حفظ</string>
+    <string name="notes_optional">ملاحظات (اختياري)</string>
+    <string name="Date">تاريخ</string>
+    <string name="unit">الكميه</string>
+    <string name="value">الوحده</string>
     <string name="analysis_name">اسم التحليل</string>
     <string name="nav_medicines">الادوية</string>
     <string name="nav_lab_results">نتيجة التحاليل</string>
     <string name="nav_appointments">مواعيد الاستشارة</string>
     <string name="fab_add_medicine">إضافة دواء</string>
     <string name="fab_add_appointment">إضافة استشارة</string>
+    <string name="add_appointment">إضافة استشارة</string>
+    <string name="fab_add">إضافة</string>
+    <string name="attach_pdf">إضافة ملف</string>
+    <string name="pdf_attached">تم إضافة ملف</string>
+    <string name="choose_option">حدد اختيارك</string>
 </resources>

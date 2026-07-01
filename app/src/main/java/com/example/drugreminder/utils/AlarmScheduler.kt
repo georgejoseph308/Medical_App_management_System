@@ -157,7 +157,7 @@ object AlarmScheduler {
             appointment = appointment,
             hour = hour,
             minute = minute,
-            offsetMinutes = -30,
+            offsetMinutes = -60,
             requestCode = appointment.id * 100,
             isBefore = true
         )

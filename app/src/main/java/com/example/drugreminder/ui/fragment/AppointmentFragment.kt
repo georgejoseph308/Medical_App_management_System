@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import com.drugreminder.databinding.FragmentAppointmentBinding
 import com.example.drugreminder.activities.AddAppointmentActivity
 import com.example.drugreminder.ui.adapter.AppointmentAdapter
@@ -16,7 +18,7 @@ class AppointmentFragment : Fragment() {
 
     private var _binding: FragmentAppointmentBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: MedicalViewModel by activityViewModels()
+    private val viewModel: MedicalViewModel by viewModels()
     private lateinit var adapter: AppointmentAdapter
 
     override fun onCreateView(
@@ -32,7 +34,6 @@ class AppointmentFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         observeAppointments()
-        setupFab()
     }
 
     private fun setupRecyclerView() {
@@ -57,12 +58,6 @@ class AppointmentFragment : Fragment() {
                 if (appointments.isEmpty()) View.VISIBLE else View.GONE
             binding.recyclerAppointments.visibility =
                 if (appointments.isEmpty()) View.GONE else View.VISIBLE
-        }
-    }
-
-    private fun setupFab() {
-        binding.fabAddAppointment.setOnClickListener {
-            startActivity(Intent(requireContext(), AddAppointmentActivity::class.java))
         }
     }
 

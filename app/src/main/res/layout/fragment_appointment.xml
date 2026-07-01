@@ -10,15 +10,11 @@
     <LinearLayout
         android:id="@+id/layoutAppointmentEmpty"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         android:padding="48dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="80dp"
@@ -32,15 +28,14 @@
             android:layout_marginTop="16dp"
             android:textSize="16sp"
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:gravity="center"
-            android:text="You don't have any appointments till now"/>
+            android:gravity="center"/>
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAppointments"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:paddingTop="8dp"
         android:paddingBottom="80dp"
         android:clipToPadding="false"
@@ -49,17 +44,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddAppointment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="80dp"
-        android:src="@drawable/ic_appointment_nav"
-        android:contentDescription="@string/fab_add_appointment"
-        app:backgroundTint="@color/purple_600"
-        app:tint="@android:color/white"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

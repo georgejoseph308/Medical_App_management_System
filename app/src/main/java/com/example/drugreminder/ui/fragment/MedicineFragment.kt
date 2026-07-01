@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.drugreminder.databinding.FragmentMedicineBinding
 import com.example.drugreminder.activities.AddMedicineActivity
+import com.example.drugreminder.activities.HistoryActivity
 import com.example.drugreminder.ui.adapter.MedicineAdapter
 import com.example.drugreminder.ui.viewmodel.MedicineViewModel
 
@@ -32,7 +33,9 @@ class MedicineFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         observeMedicines()
-        setupFab()
+        binding.fabHistory.setOnClickListener {
+            startActivity(Intent(requireContext(), HistoryActivity::class.java))
+        }
     }
 
     private fun setupRecyclerView() {
@@ -62,13 +65,6 @@ class MedicineFragment : Fragment() {
             (binding.recyclerMedicines.adapter as? MedicineAdapter)?.submitList(medicineDays)
         }
     }
-
-    private fun setupFab() {
-        binding.fabAddMedicine.setOnClickListener {
-            startActivity(Intent(requireContext(), AddMedicineActivity::class.java))
-        }
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
